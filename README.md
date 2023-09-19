@@ -1,6 +1,6 @@
-# Laravel Docker
+# Leaf Docker
 
-This repository creates base Docker images for use with [Laravel](https://laravel.com) on [Fly.io](https://fly.io). 
+This repository creates base Docker images for use with [Leaf PHP](https://leafphp.dev) on [Fly.io](https://fly.io).
 
 ## PHP
 
@@ -11,7 +11,7 @@ This creates a base container for the following PHP versions
 * 8.1
 * 8.2
 
-Built containers from this project will be available at https://hub.docker.com/r/fideloper/fly-laravel
+Built containers from this project will be available at https://hub.docker.com/r/leafphp/php-fpm
 
 ## Building
 

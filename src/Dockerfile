@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 ARG PHP_VERSION='8.2'
 
-LABEL maintainer="Chris Fidao (fideloper@fly.io)"
+LABEL maintainer="Michael Darko (mychi@leafphp.dev)"
 
 ENV DEBIAN_FRONTEND=noninteractive \
     COMPOSER_ALLOW_SUPERUSER=1 \

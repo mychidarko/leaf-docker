@@ -15,13 +15,13 @@ phpVersions=(
 for phpVersion in ${phpVersions[@]}; do
     docker build \
       --build-arg PHP_VERSION="${phpVersion}" \
-      -t "fideloper/fly-laravel:${phpVersion}" \
+      -t "mychidarko/leaf-fly-fpm:${phpVersion}" \
       -f "${SCRIPT_DIR}/src/Dockerfile" \
       "${SCRIPT_DIR}/src"
 done
 
 if [[ $# -gt 0 ]] && [[ $1 == "push" ]]; then
     for phpVersion in ${phpVersions[@]}; do
-        docker push "fideloper/fly-laravel:${phpVersion}"
+        docker push "mychidarko/leaf-fly-fpm:${phpVersion}"
     done
 fi

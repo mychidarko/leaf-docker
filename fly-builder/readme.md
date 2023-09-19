@@ -1,6 +1,6 @@
 # Fly Builder
 
-Run Docker in a Fly.io VM. 
+Run Docker in a Fly.io VM.
 
 This helps run `docker build...` on AMD64 instances, especially useful when you're hacking on this project from an ARM-based infrastructure or a machine that runs on a battery.
 
@@ -14,13 +14,13 @@ Here are the steps:
 
 ```bash
 # Create an app to house the VM that will run Docker
-fly apps create --machines --name laravel-docker-builder
+fly apps create --machines --name leaf-docker-builder
 
 # Create a volume
-fly volumes create -r dfw -a laravel-docker-builder -s 50 laravel_docker
+fly volumes create -r dfw -a leaf-docker-builder -s 50 leaf_docker
 
 # From this directory, which contains a Dockerfile
-fly m run . -r dfw -v laravel_docker:/data -a laravel-docker-builder
+fly m run . -r dfw -v leaf_docker:/data -a leaf-docker-builder
 ```
 
 ## Using the Remote Builder
@@ -29,7 +29,7 @@ Once you [setup Wireguard](https://fly.io/docs/reference/private-networking/#pri
 
 ```bash
 # Get the IP Address of the VM we created
-fly m list -a laravel-docker-builder
+fly m list -a leaf-docker-builder
 
 # Use that as your DOCKER_HOST
 DOCKER_HOST=tcp://[fdaa:0:6ba9:a7b:97:142d:77ac:2]:2375 docker ps
