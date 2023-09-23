@@ -2,7 +2,6 @@
 
 set -e
 
-
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 phpVersions=(
@@ -13,7 +12,7 @@ phpVersions=(
 )
 
 for phpVersion in ${phpVersions[@]}; do
-    docker build \
+    docker build --no-cache \
       --build-arg PHP_VERSION="${phpVersion}" \
       -t "mychidarko/leaf-fly-fpm:${phpVersion}" \
       -f "${SCRIPT_DIR}/src/Dockerfile" \

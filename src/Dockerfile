@@ -33,7 +33,7 @@ RUN apt-get update \
     && apt-get update \
     && apt-get -y --no-install-recommends install $(cat /tmp/php-packages.txt) \
     && ln -sf /usr/sbin/php-fpm${PHP_VERSION} /usr/sbin/php-fpm \
-    && mkdir -p /var/www/html/public && echo "<?php phpinfo();" > /var/www/html/public/index.php \
+    && mkdir -p /var/www/html && echo "<?php phpinfo();" > /var/www/html/index.php \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
